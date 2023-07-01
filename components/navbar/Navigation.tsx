@@ -30,9 +30,11 @@ export default function Navigation({ data }: Props) {
         `}
       >
         {routes.map((item) => (
-          <Link onClick={toggleOpen} href={item.link} key={item.name}>
-            <li>{item.name}</li>
-          </Link>
+          <li key={item.name}>
+            <Link onClick={toggleOpen} href={item.link}>
+              {item.name}
+            </Link>
+          </li>
         ))}
       </ul>
       <div className="absolute z-50 md:hidden top-24 right-5">
