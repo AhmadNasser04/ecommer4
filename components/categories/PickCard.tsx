@@ -25,7 +25,7 @@ export default function PickCard({ pick }: Props) {
     >
       <Link href={`/category/${pick.id}`}>
         <div className="flex items-end justify-center w-full h-full pb-5">
-          <ArrowButton title={`Shop ${pick.name}`} />
+          <ArrowButton title={`${pick.name}`} />
         </div>
       </Link>
     </motion.div>

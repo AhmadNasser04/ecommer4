@@ -4,6 +4,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Hamburger from "./Hamburger";
 import { Category } from "@/types";
+import { ShoppingCart } from "lucide-react";
+import IconButton from "../buttons/IconButton";
 
 interface Props {
   data: Category[];
@@ -36,6 +38,16 @@ export default function Navigation({ data }: Props) {
             </Link>
           </li>
         ))}
+        <li className="md:hidden">
+          <Link
+            onClick={toggleOpen}
+            className="flex items-center gap-2 px-3 py-2 font-normal text-white bg-black border rounded-xl"
+            href="/cart"
+          >
+            <ShoppingCart size={20} />
+            Cart
+          </Link>
+        </li>
       </ul>
       <div className="absolute z-50 md:hidden top-24 right-5">
         <Hamburger isChecked={open} onClick={toggleOpen} />
